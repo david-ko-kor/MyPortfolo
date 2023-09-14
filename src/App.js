@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React from 'react';
+import {Route,Routes} from 'react-router-dom';
+import Form from './Componets/Form';
+import FormList from './Componets/FormList';
+import Home from './Componets/Nav';
+import Detail from './Componets/Detail';
+import  Footer  from './Componets/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from './Componets/HomePage';
 function App() {
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/post' element={<Form/>}/>
+      <Route path='/data' element={<FormList/>}/>
+      <Route path='/next' element={<Detail/>}/>
+    </Routes>
+
+    <Footer/>
+    </>
+
   );
 }
 
